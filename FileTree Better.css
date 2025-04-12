@@ -1,0 +1,65 @@
+:root {
+    color-scheme: light dark;
+    --bg-clr-opacity: 0.12;
+    --bg-color: light-dark(rgba(0, 0, 0, var(--bg-clr-opacity)), rgba(255,255,255,var(--bg-clr-opacity)));
+}
+
+.tree-item.nav-file,
+.tree-item.nav-folder,
+.tree-item-children.nav-folder-children {
+    position: relative!important;
+}
+
+.tree-item.nav-file:before,
+.tree-item.nav-folder:before,
+.tree-item-children.nav-folder-children:before {
+    content: ''!important;
+    position: absolute!important;
+    background: var(--bg-color)!important;
+}
+
+.tree-item.nav-file:before,
+.tree-item.nav-folder:before {
+    height: 1px!important;
+    width: 20px!important;
+    top: 50%!important;
+    transform: translate(0, -50%)!important;
+    margin-inline-start: -3px!important;
+}
+
+.tree-item.nav-folder:before {
+    top: 13px!important;
+    width: 5px!important;
+}
+
+.tree-item-children.nav-folder-children {
+    border-left-width: 0!important;
+}
+
+.tree-item-children.nav-folder-children:before {
+    left: 0!important;
+    top: 0!important;
+    bottom: 12px!important;
+    width: 1px!important;
+}
+
+.nav-files-container > div > .tree-item.nav-file:before,
+.nav-files-container > div > .tree-item.nav-folder:before {
+    content: none!important;
+}
+
+
+
+/*mobile styling*/
+.is-mobile .tree-item-children.nav-folder-children:before {
+    bottom: 16px!important;
+}
+.is-mobile .tree-item.nav-folder:before {
+    top: 16px!important;
+}
+
+div.tree-item.nav-file:has( *[data-path*="_about_.md"]),
+.hide-folder-note .is-folder-note,
+.tree-item.nav-file:has(.is-folder-note):before {
+    display: none!important;
+}
