@@ -49,6 +49,10 @@
 }
 
 
+body:not(.is-grabbing) .nav-file-title.is-active:hover,
+body:not(.is-grabbing) .nav-folder-title.is-active:hover {
+    background-color: unset;
+}
 
 /*mobile styling*/
 .is-mobile .tree-item-children.nav-folder-children:before {
